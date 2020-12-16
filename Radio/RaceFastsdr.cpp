@@ -1194,9 +1194,9 @@ static int setFilters(struct playData *rx,struct Filters *f)
     f->demod=freqdem_create(0.5);
     
 #ifndef LIQUID_VERSION_4
-    f->demodAM = ampmodem_create(0.5, mode, iflag);
- #else
     f->demodAM = ampmodem_create(0.5, 0.0, mode, iflag);
+ #else
+    f->demodAM = ampmodem_create(0.5, mode, iflag);
 #endif
 
     f->iqSampler  = msresamp_crcf_create(rx->Ratio, As);
