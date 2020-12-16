@@ -854,7 +854,7 @@ static int setFilters(struct playData4 *rx,struct Filters2 *f)
 
     
     f->demod=freqdem_create(0.5);
-#ifdef LIQUID_VERSION_4
+#ifndef LIQUID_VERSION_4
     f->demodAM = ampmodem_create(0.5, 0.0, mode, iflag);
 #else
     f->demodAM = ampmodem_create(0.5, mode, iflag);
